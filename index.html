@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Deepjyoti Das — Aerospace, Artificial Intelligence, LLM Training, Business Analysis and Project Management.">
+
+<title>Deepjyoti Das | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #080808;
+  --surface: #111111;
+  --white: #f5f5f2;
+  --muted: #858585;
+  --line: rgba(255,255,255,.13);
+  --accent: #c9c9c2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: white;
+  color: black;
+}
+
+/* NAVIGATION */
+
+nav {
+  height: 85px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(8,8,8,.72);
+  backdrop-filter: blur(14px);
+}
+
+.logo {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  padding: 145px 8% 75px;
+  gap: 50px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #fff;
+  opacity: .035;
+  filter: blur(160px);
+  top: 15%;
+  left: 25%;
+  pointer-events: none;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+
+.hero h1 {
+  font-size: clamp(54px, 8vw, 112px);
+  line-height: .98;
+  letter-spacing: -7px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: #777;
+  display: block;
+}
+
+.hero-description {
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 490px;
+  margin-top: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 15px 24px;
+  border: 1px solid white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.btn.primary {
+  background: white;
+  color: black;
+}
+
+.btn:hover {
+  background: #aaa;
+  border-color: #aaa;
+  color: black;
+}
+
+.hero-image {
+  height: min(680px, 76vh);
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+  background: #171717;
+  border: 1px solid var(--line);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: grayscale(100%) contrast(1.05);
+  transition: transform 1s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.035);
+}
+
+.image-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  background: rgba(0,0,0,.7);
+  padding: 12px 15px;
+}
+
+/* MARQUEE */
+
+.marquee {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  padding: 24px 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: move 28s linear infinite;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #aaa;
+  font-family: 'DM Mono', monospace;
+}
+
+.marquee-track span {
+  margin: 0 35px;
+}
+
+@keyframes move {
+  to { transform: translateX(-50%); }
+}
+
+/* SECTIONS */
+
+section.content-section {
+  padding: 120px 8%;
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 65px;
+}
+
+.section-number {
+  font-family: 'DM Mono', monospace;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: clamp(38px, 6vw, 68px);
+  letter-spacing: -3px;
+  line-height: 1.05;
+  margin-top: 18px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 300px;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.about-text {
+  color: #aaa;
+  line-height: 2;
+  font-size: 15px;
+}
+
+.about-text p + p {
+  margin-top: 20px;
+}
+
+.about-highlight {
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+}
+
+.about-highlight h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.about-highlight p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* EXPERTISE */
+
+.expertise {
+  background: #0e0e0e;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.expertise-card {
+  padding: 38px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  min-height: 220px;
+  transition: .3s;
+}
+
+.expertise-card:hover {
+  background: #191919;
+}
+
+.card-index {
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+}
+
+.expertise-card h3 {
+  font-size: 21px;
+  margin: 28px 0 13px;
+}
+
+.expertise-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* APPROACH */
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.approach-item {
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+}
+
+.approach-item h3 {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.approach-item p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+/* CONTACT */
+
+.contact {
+  background: #f1f1ed;
+  color: #080808;
+  text-align: center;
+  padding: 125px 8%;
+}
+
+.contact .section-number {
+  color: #777;
+}
+
+.contact h2 {
+  font-size: clamp(45px, 8vw, 95px);
+  letter-spacing: -6px;
+  line-height: 1;
+  margin: 30px 0;
+}
+
+.contact p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+
+.contact .btn {
+  border-color: black;
+}
+
+.contact .btn.primary {
+  background: black;
+  color: white;
+}
+
+.contact .btn:hover {
+  background: #444;
+  color: white;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #777;
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  border-top: 1px solid var(--line);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+  nav {
+    height: 72px;
+    padding: 0 6%;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 9px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 125px 6% 65px;
+    gap: 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(57px, 13vw, 90px);
+    letter-spacing: -4px;
+  }
+
+  .hero-image {
+    height: 620px;
+    min-height: 0;
+    max-width: 520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  section.content-section {
+    padding: 85px 6%;
+  }
+
+  .section-top {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .section-subtitle {
+    margin-top: 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-card {
+    padding: 25px 18px;
+    min-height: 220px;
+  }
+
+  .expertise-card h3 {
+    font-size: 17px;
+  }
+
+  .expertise-card p {
+    font-size: 12px;
+  }
+
+  .contact h2 {
+    letter-spacing: -3px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media(max-width: 420px) {
+  .nav-links {
+    gap: 10px;
+    font-size: 8px;
+  }
+
+  .hero-image {
+    height: 500px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a class="logo" href="#">DD<span>.</span></a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="hero-copy reveal">
+    <div class="eyebrow">Independent Professional Portfolio / 2026</div>
+
+    <h1>
+      DEEPJYOTI
+      <span>DAS.</span>
+    </h1>
+
+    <p class="hero-description">
+      An interdisciplinary professional at the intersection of
+      Aerospace Engineering, Artificial Intelligence, analytical
+      thinking and business operations.
+
+      Building perspective through technology, strategy and continuous learning.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#about" class="btn primary">Explore Portfolio ↘</a>
+      <a href="#contact" class="btn">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-image reveal">
+    <img
+      src="assets/deepjyoti-portrait.jpg"
+      alt="Portrait of Deepjyoti Das"
+      fetchpriority="high"
+    >
+    <div class="image-label">DEEPJYOTI DAS / PORTRAIT</div>
+  </div>
+
+</header>
+
+<!-- MOVING TEXT -->
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>ENGINEERING</span> ✳
+    <span>ARTIFICIAL INTELLIGENCE</span> ✳
+    <span>BUSINESS ANALYSIS</span> ✳
+    <span>PROJECT MANAGEMENT</span> ✳
+    <span>ENGINEERING</span> ✳
+    <span>ARTIFICIAL INTELLIGENCE</span> ✳
+    <span>BUSINESS ANALYSIS</span> ✳
+    <span>PROJECT MANAGEMENT</span> ✳
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<section class="content-section" id="about">
+
+  <div class="section-top reveal">
+    <div>
+      <div class="section-number">01 / ABOUT ME</div>
+      <h2 class="section-title">Beyond<br>the ordinary.</h2>
+    </div>
+
+    <p class="section-subtitle">
+      Curiosity is the foundation. Adaptability is the advantage.
+    </p>
+  </div>
+
+  <div class="about-grid reveal">
+
+    <div class="about-text">
+      <p>
+        I am Deepjyoti Das, an aspiring interdisciplinary professional
+        with interests spanning aerospace, artificial intelligence,
+        business intelligence and financial services.
+      </p>
+
+      <p>
+        My approach combines analytical thinking, structured
+        problem-solving and an eagerness to understand how
+        technology and business work together.
+      </p>
+
+      <p>
+        I believe in continuous development, embracing new challenges
+        and creating meaningful value through knowledge and execution.
+      </p>
+    </div>
+
+    <div class="about-highlight">
+      <h3>MY PROFESSIONAL PHILOSOPHY</h3>
+      <p>
+        Think critically. Learn continuously. Execute intelligently.
+        Stay adaptable in a world that never stops evolving.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+
+<section class="content-section expertise" id="expertise">
+
+  <div class="section-top reveal">
+    <div>
+      <div class="section-number">02 / EXPERTISE</div>
+      <h2 class="section-title">Areas of<br>interest.</h2>
+    </div>
+
+    <p class="section-subtitle">
+      A multidisciplinary perspective across technology,
+      engineering and business.
+    </p>
+  </div>
+
+  <div class="expertise-grid">
+
+    <div class="expertise-card reveal">
+      <div class="card-index">01 / ENGINEERING</div>
+      <h3>Aerospace Engineering</h3>
+      <p>
+        Engineering fundamentals, technical thinking,
+        systems and problem-solving.
+      </p>
+    </div>
+
+    <div class="expertise-card reveal">
+      <div class="card-index">02 / ARTIFICIAL INTELLIGENCE</div>
+      <h3>AI Generalist</h3>
+      <p>
+        Exploring AI applications, intelligent workflows,
+        emerging technologies and practical AI solutions.
+      </p>
+    </div>
+
+    <div class="expertise-card reveal">
+      <div class="card-index">03 / LANGUAGE MODELS</div>
+      <h3>LLM Training & RLHF</h3>
+      <p>
+        Language model evaluation, response quality,
+        instruction following and human feedback concepts.
+      </p>
+    </div>
+
+    <div class="expertise-card reveal">
+      <div class="card-index">04 / BUSINESS</div>
+      <h3>Business Analysis</h3>
+      <p>
+        Analytical problem-solving, business processes,
+        research and data-informed decision-making.
+      </p>
+    </div>
+
+    <div class="expertise-card reveal">
+      <div class="card-index">05 / MANAGEMENT</div>
+      <h3>Project Management</h3>
+      <p>
+        Planning, coordination, structured execution
+        and process-oriented thinking.
+      </p>
+    </div>
+
+    <div class="expertise-card reveal">
+      <div class="card-index">06 / FINANCE</div>
+      <h3>Financial Services</h3>
+      <p>
+        Financial concepts, business fundamentals,
+        analytical evaluation and financial awareness.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- APPROACH -->
+
+<section class="content-section" id="approach">
+
+  <div class="section-top reveal">
+    <div>
+      <div class="section-number">03 / MY APPROACH</div>
+      <h2 class="section-title">How I think.</h2>
+    </div>
+  </div>
+
+  <div class="approach-grid">
+
+    <div class="approach-item reveal">
+      <h3>01. Curiosity</h3>
+      <p>
+        Exploring unfamiliar subjects and continuously
+        expanding knowledge across disciplines.
+      </p>
+    </div>
+
+    <div class="approach-item reveal">
+      <h3>02. Analysis</h3>
+      <p>
+        Understanding problems, evaluating information
+        and developing structured solutions.
+      </p>
+    </div>
+
+    <div class="approach-item reveal">
+      <h3>03. Adaptability</h3>
+      <p>
+        Embracing change, learning new tools and
+        evolving with technology.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="section-number">04 / CONTACT</div>
+
+  <h2>Let's connect.</h2>
+
+  <p>
+    Open to meaningful conversations, professional opportunities
+    and collaborations.
+  </p>
+
+  <!-- Replace YOUR_EMAIL with your actual email address -->
+
+  <a href="mailto:YOUR_EMAIL" class="btn primary">
+    SEND AN EMAIL ↗
+  </a>
+
+</section>
+
+<footer>
+  <div>© 2026 DEEPJYOTI DAS. ALL RIGHTS RESERVED.</div>
+  <div>DESIGNED WITH INTENTION.</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
+</script>
+
+</body>
+</html>
