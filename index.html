@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
   --white: #f5f5f2;
   --muted: #858585;
   --line: rgba(255,255,255,.13);
-  --accent: #c9c9c2;
+  --accent: #c9f36a;
 }
 
 * {
@@ -44,8 +45,8 @@ a {
 }
 
 ::selection {
-  background: white;
-  color: black;
+  background: var(--accent);
+  color: #080808;
 }
 
 /* NAVIGATION */
@@ -72,7 +73,7 @@ nav {
 }
 
 .logo span {
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .nav-links {
@@ -86,7 +87,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: white;
+  color: var(--accent);
 }
 
 /* HERO */
@@ -106,7 +107,7 @@ nav {
   position: absolute;
   width: 500px;
   height: 500px;
-  background: #fff;
+  background: var(--accent);
   opacity: .035;
   filter: blur(160px);
   top: 15%;
@@ -115,7 +116,7 @@ nav {
 }
 
 .eyebrow {
-  color: var(--muted);
+  color: var(--accent);
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 3px;
@@ -161,14 +162,15 @@ nav {
 }
 
 .btn.primary {
-  background: white;
-  color: black;
+  background: var(--accent);
+  color: #080808;
+  border-color: var(--accent);
 }
 
 .btn:hover {
-  background: #aaa;
-  border-color: #aaa;
-  color: black;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #080808;
 }
 
 .hero-image {
@@ -247,7 +249,7 @@ section.content-section {
 
 .section-number {
   font-family: 'DM Mono', monospace;
-  color: var(--muted);
+  color: var(--accent);
   font-size: 11px;
   letter-spacing: 2px;
 }
@@ -324,10 +326,11 @@ section.content-section {
 
 .expertise-card:hover {
   background: #191919;
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .card-index {
-  color: #666;
+  color: var(--accent);
   font-family: 'DM Mono', monospace;
   font-size: 11px;
 }
@@ -341,6 +344,134 @@ section.content-section {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.9;
+}
+
+/* SKILLS & VERIFIED EXPERTISE */
+
+.skills-section {
+  background: #080808;
+}
+
+.verified-panel {
+  border: 1px solid rgba(201,243,106,.35);
+  padding: 30px;
+  margin-bottom: 45px;
+  background: rgba(201,243,106,.035);
+}
+
+.verified-heading {
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.verified-badge {
+  border: 1px solid rgba(201,243,106,.45);
+  color: var(--accent);
+  padding: 10px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .5px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.skill-card {
+  padding: 30px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: .3s;
+}
+
+.skill-card:hover {
+  background: #171717;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.skill-index {
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+
+.skill-card h3 {
+  font-size: 17px;
+  margin: 15px 0;
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.skills-label {
+  margin-top: 55px;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 25px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: #aaa;
+  padding: 11px 15px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: #080808;
+  border-color: var(--accent);
+}
+
+.other-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-pill {
+  border: 1px solid var(--line);
+  padding: 11px 14px;
+  font-size: 11px;
+  color: #bbb;
+  transition: .25s;
+}
+
+.skill-pill:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.skill-pill[hidden] {
+  display: none;
 }
 
 /* CERTIFICATIONS */
@@ -363,10 +494,11 @@ section.content-section {
   background: #171717;
   padding-left: 18px;
   padding-right: 18px;
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 .certification-number {
-  color: #666;
+  color: var(--accent);
   font-family: 'DM Mono', monospace;
   font-size: 11px;
 }
@@ -388,8 +520,8 @@ section.content-section {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
   letter-spacing: 1px;
-  color: #aaa;
-  border: 1px solid var(--line);
+  color: var(--accent);
+  border: 1px solid rgba(201,243,106,.35);
   padding: 8px 10px;
   white-space: nowrap;
 }
@@ -454,8 +586,9 @@ section.content-section {
 }
 
 .contact .btn:hover {
-  background: #444;
-  color: white;
+  background: var(--accent);
+  color: #080808;
+  border-color: var(--accent);
 }
 
 /* FOOTER */
@@ -552,6 +685,14 @@ footer {
     font-size: 12px;
   }
 
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .verified-panel {
+    padding: 22px;
+  }
+
   .certification-item {
     grid-template-columns: 35px minmax(0,1fr);
     gap: 14px;
@@ -577,10 +718,25 @@ footer {
   }
 }
 
+@media(max-width:520px) {
+  nav {
+    padding: 0 4%;
+  }
+
+  .nav-links {
+    gap: 7px;
+    font-size: 7px;
+  }
+
+  .logo {
+    font-size: 15px;
+  }
+}
+
 @media(max-width:420px) {
   .nav-links {
-    gap: 8px;
-    font-size: 7px;
+    gap: 6px;
+    font-size: 6.5px;
   }
 
   .hero-image {
@@ -606,6 +762,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#certifications">Credentials</a></li>
     <li><a href="#approach">Approach</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -786,13 +943,144 @@ footer {
   </div>
 </section>
 
+<!-- SKILLS & VERIFIED EXPERTISE -->
+
+<section class="content-section skills-section" id="skills">
+
+  <div class="section-top reveal">
+    <div>
+      <div class="section-number">03 / SKILLS &amp; VERIFIED EXPERTISE</div>
+      <h2 class="section-title">Skills.<br>In practice.</h2>
+    </div>
+
+    <p class="section-subtitle">
+      A multidisciplinary skill set built through engineering,
+      AI projects, professional platforms and continuous learning.
+    </p>
+  </div>
+
+  <div class="verified-panel reveal">
+    <div class="verified-heading">OUTLIER AI / VERIFIED PROJECT BADGES</div>
+
+    <div class="badge-grid">
+      <span class="verified-badge">AETHER GENERALIST</span>
+      <span class="verified-badge">ARTIFACT ACQUISITION</span>
+      <span class="verified-badge">BENGALI (BN-IN)</span>
+      <span class="verified-badge">BENGALI (BN-LATN)</span>
+      <span class="verified-badge">BENGALI: বাংলা</span>
+      <span class="verified-badge">GENERALIST</span>
+      <span class="verified-badge">HINDI (HI-IN)</span>
+      <span class="verified-badge">HINDI (HI-LATN)</span>
+    </div>
+  </div>
+
+  <div class="skill-grid">
+
+    <div class="skill-card reveal">
+      <div class="skill-index">01 / AI &amp; ALIGNMENT</div>
+      <h3>AI Operations, Alignment &amp; Red Teaming</h3>
+      <p>
+        LLM training, Reinforcement Learning from Human Feedback,
+        adversarial testing, model evaluation, AI operations
+        and dataset annotation.
+      </p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-index">02 / DATA &amp; CODE</div>
+      <h3>Programming, Data &amp; Analytics</h3>
+      <p>
+        Programming fundamentals, SQL, Python, data verification,
+        spreadsheet modeling, financial data analysis
+        and business process automation.
+      </p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-index">03 / ENGINEERING</div>
+      <h3>Aerospace &amp; Mechanical Engineering</h3>
+      <p>
+        Aerospace engineering fundamentals, structural and thermal
+        analysis, fatigue stress meshing, MATLAB, ANSYS
+        and AutoCAD.
+      </p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-index">04 / PLATFORMS &amp; QA</div>
+      <h3>Platforms, QA &amp; Enterprise Tools</h3>
+      <p>
+        Annotation platforms, quality assurance, enterprise tools,
+        workflow optimization, project tracking and
+        data pipeline evaluation.
+      </p>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-index">05 / LANGUAGES</div>
+      <h3>Languages</h3>
+      <p>
+        Bengali (বাংলা), Bengali transliteration,
+        Hindi and Hindi transliteration.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="skills-label">
+    ADDITIONAL SKILLS / FILTER BY SPECIALIZATION
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all" type="button">ALL</button>
+    <button class="filter-btn" data-filter="ai" type="button">AI &amp; RLHF</button>
+    <button class="filter-btn" data-filter="data" type="button">DATA &amp; CODE</button>
+    <button class="filter-btn" data-filter="engineering" type="button">ENGINEERING</button>
+    <button class="filter-btn" data-filter="tools" type="button">TOOLS</button>
+    <button class="filter-btn" data-filter="languages" type="button">LANGUAGES</button>
+  </div>
+
+  <div class="other-skills">
+
+    <span class="skill-pill" data-category="data">HTML</span>
+    <span class="skill-pill" data-category="ai">Reinforcement Learning from Human Feedback</span>
+    <span class="skill-pill" data-category="data">Java</span>
+    <span class="skill-pill" data-category="data">SQL</span>
+    <span class="skill-pill" data-category="tools">Insightful Software</span>
+    <span class="skill-pill" data-category="engineering">Structural/Thermal Fatigue Stress Meshing</span>
+    <span class="skill-pill" data-category="ai">Red Teaming</span>
+    <span class="skill-pill" data-category="engineering">ANSYS</span>
+    <span class="skill-pill" data-category="ai">Qualitative Benchmarking</span>
+    <span class="skill-pill" data-category="tools">Slack</span>
+    <span class="skill-pill" data-category="data">Advanced Spreadsheet Modeling</span>
+    <span class="skill-pill" data-category="engineering">MATLAB</span>
+    <span class="skill-pill" data-category="data">Business Process Automation</span>
+    <span class="skill-pill" data-category="tools">Okta Enterprise</span>
+    <span class="skill-pill" data-category="ai">Adversarial Prompt Hardening</span>
+    <span class="skill-pill" data-category="ai">Multi-turn Linguistic Profiling</span>
+    <span class="skill-pill" data-category="data">Financial Data Analysis</span>
+    <span class="skill-pill" data-category="data">Data Verification Pipelines</span>
+    <span class="skill-pill" data-category="ai">Dataset Annotation</span>
+    <span class="skill-pill" data-category="ai">Model Red Teaming</span>
+    <span class="skill-pill" data-category="ai">AI Ops</span>
+    <span class="skill-pill" data-category="tools">Jira</span>
+    <span class="skill-pill" data-category="tools">Maven Tracker</span>
+    <span class="skill-pill" data-category="tools">Baseline Portal Infrastructure</span>
+    <span class="skill-pill" data-category="engineering">AutoCAD</span>
+    <span class="skill-pill" data-category="data">Python</span>
+    <span class="skill-pill" data-category="tools">SuperAnnotate Suite</span>
+    <span class="skill-pill" data-category="tools">Workflow Optimization</span>
+
+  </div>
+</section>
+
 <!-- CERTIFICATIONS -->
 
 <section class="content-section certifications" id="certifications">
 
   <div class="section-top reveal">
     <div>
-      <div class="section-number">03 / CERTIFICATIONS &amp; CREDENTIALS</div>
+      <div class="section-number">04 / CERTIFICATIONS &amp; CREDENTIALS</div>
       <h2 class="section-title">Knowledge.<br>Validated.</h2>
     </div>
 
@@ -975,6 +1263,19 @@ footer {
       <span class="certification-tag">AI CREDENTIAL</span>
     </article>
 
+    <article class="certification-item reveal">
+      <div class="certification-number">20</div>
+      <div class="certification-info">
+        <h3>Expert LLM Trainer — Research &amp; Development</h3>
+        <p>
+          Outlier AI · LLM training, AI research and development,
+          evaluation, prompt engineering, RLHF, reasoning assessment
+          and response optimization.
+        </p>
+      </div>
+      <span class="certification-tag">LLM TRAINER</span>
+    </article>
+
   </div>
 </section>
 
@@ -984,7 +1285,7 @@ footer {
 
   <div class="section-top reveal">
     <div>
-      <div class="section-number">04 / MY APPROACH</div>
+      <div class="section-number">05 / MY APPROACH</div>
       <h2 class="section-title">How I think.</h2>
     </div>
   </div>
@@ -1022,7 +1323,7 @@ footer {
 
 <section class="contact" id="contact">
 
-  <div class="section-number">05 / CONTACT</div>
+  <div class="section-number">06 / CONTACT</div>
 
   <h2>Let's connect.</h2>
 
@@ -1031,9 +1332,9 @@ footer {
     and collaborations.
   </p>
 
-<a href="mailto:marshadowdelta@gmail.com" class="btn primary">
-  SEND AN EMAIL ↗
-</a>
+  <a href="mailto:marshadowdelta@gmail.com" class="btn primary">
+    SEND AN EMAIL ↗
+  </a>
 
 </section>
 
@@ -1043,6 +1344,8 @@ footer {
 </footer>
 
 <script>
+/* REVEAL ANIMATIONS */
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1054,6 +1357,28 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(element => {
   observer.observe(element);
+});
+
+/* SKILLS FILTER */
+
+document.querySelectorAll('#skills .filter-btn').forEach(button => {
+  button.addEventListener('click', () => {
+
+    const selected = button.dataset.filter;
+
+    document.querySelectorAll('#skills .filter-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    document.querySelectorAll('#skills .skill-pill').forEach(skill => {
+      skill.hidden =
+        selected !== 'all' &&
+        skill.dataset.category !== selected;
+    });
+
+  });
 });
 </script>
 
